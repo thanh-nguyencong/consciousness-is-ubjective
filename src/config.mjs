@@ -2,7 +2,7 @@ export const SITE = {
   name: "Thành",
   domain: "https://coniso.netlify.app",
 
-  title: "Coniso - About where web dev and AI stuffs are absolutely rocked by Thành",
+  title: "Coniso - Web dev and AI",
   description: "🤖 where Thành expresses his admiration for web dev and AI stuffs",
 
   postsPerPage: 6,
