@@ -1,9 +1,9 @@
 export const SITE = {
-  name: "AstroWind",
-  domain: "https://astrowind.vercel.app",
+  name: "Coniso",
+  domain: "https://coniso.netlify.app",
 
-  title: "AstroWind — Your website with Astro + Tailwind CSS",
-  description: "🚀 AstroWind is a free and ready to start template to make your website using Astro and Tailwind CSS.",
+  title: "Coniso - About where web dev and AI stuffs are absolutely rocked by Thành",
+  description: "🤖 where Thành expresses his admiration of dev and AI stuffs",
 
   postsPerPage: 6,
   
