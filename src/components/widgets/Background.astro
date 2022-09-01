@@ -1,13 +1,14 @@
-<script>
-  import { Scene, Engine, ArcRotateCamera, SceneLoader, Vector3, HemisphericLight } from "babylonjs"
+<script >
+  import { Scene, Engine, ArcRotateCamera, MeshBuilder, Vector3, HemisphericLight, Color4 } from "babylonjs"
 
   const canvas = document.getElementById("renderCanvas") as HTMLCanvasElement
   const engine = new Engine(canvas, true)
   const scene = new Scene(engine)
-  SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "box.babylon")
+  MeshBuilder.CreateSphere("", {}, scene)
   const camera = new ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new Vector3(0, 0, 0))
   camera.attachControl(canvas, true)
   const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene)
+  scene.clearColor = new Color4(0, 0, 0, 0)
   engine.runRenderLoop(function () {
     scene.render()
   })
@@ -17,10 +18,11 @@
 
 <style>
   #renderCanvas {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    z-index: -1;
   }
 </style>
