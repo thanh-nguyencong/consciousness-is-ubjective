@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "Coniso",
+  name: "Thành",
   domain: "https://coniso.netlify.app",
 
   title: "Coniso - About where web dev and AI stuffs are absolutely rocked by Thành",
