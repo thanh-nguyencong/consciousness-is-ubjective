@@ -13,8 +13,8 @@
 
   (sun.mesh.material as any).diffuseTexture = new Texture('textures/sun.png', scene, true, false, Texture.BILINEAR_SAMPLINGMODE);
   (sun.mesh.material as any).diffuseTexture.hasAlpha = false;
-  sun.mesh.position = new Vector3(-150, 150, 150);
-  sun.mesh.scaling = new Vector3(100, 100, 100);
+  sun.mesh.position = new Vector3(100, 50, 150);
+  sun.mesh.scaling = new Vector3(10, 10, 10);
   light.position = sun.mesh.position
   scene.clearColor = new Color4(0, 0, 0, 0)
   engine.runRenderLoop(function () {
@@ -31,6 +31,6 @@
     left: 0;
     height: 100%;
     width: 100%;
-    /* z-index: -1; */
+    z-index: -1;
   }
 </style>
