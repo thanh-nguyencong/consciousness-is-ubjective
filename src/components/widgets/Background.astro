@@ -1,13 +1,21 @@
 <script >
-  import { Scene, Engine, ArcRotateCamera, MeshBuilder, Vector3, HemisphericLight, Color4 } from "babylonjs"
+  import { Scene, Engine, ArcRotateCamera, MeshBuilder, Vector3, Color4, VolumetricLightScatteringPostProcess, PointLight, Texture } from "babylonjs"
 
   const canvas = document.getElementById("renderCanvas") as HTMLCanvasElement
   const engine = new Engine(canvas, true)
   const scene = new Scene(engine)
-  MeshBuilder.CreateSphere("", {}, scene)
+  const earth = MeshBuilder.CreateSphere("earth", {}, scene)
+
   const camera = new ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new Vector3(0, 0, 0))
-  camera.attachControl(canvas, true)
-  const light = new HemisphericLight("light", new Vector3(1, 1, 0), scene)
+  camera.attachControl(canvas, false)
+  const light = new PointLight("light", new Vector3(1, 1, 0), scene)
+	var sun = new VolumetricLightScatteringPostProcess('sun', 1.0, camera, null, 100, Texture.BILINEAR_SAMPLINGMODE, engine, false);
+
+  (sun.mesh.material as any).diffuseTexture = new Texture('textures/sun.png', scene, true, false, Texture.BILINEAR_SAMPLINGMODE);
+  (sun.mesh.material as any).diffuseTexture.hasAlpha = false;
+  sun.mesh.position = new Vector3(-150, 150, 150);
+  sun.mesh.scaling = new Vector3(100, 100, 100);
+  light.position = sun.mesh.position
   scene.clearColor = new Color4(0, 0, 0, 0)
   engine.runRenderLoop(function () {
     scene.render()
@@ -23,6 +31,6 @@
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: -1;
+    /* z-index: -1; */
   }
 </style>
