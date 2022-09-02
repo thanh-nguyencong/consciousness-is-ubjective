@@ -17,6 +17,11 @@
   sun.mesh.scaling = new Vector3(10, 10, 10);
   light.position = sun.mesh.position
   scene.clearColor = new Color4(0, 0, 0, 0)
+  scene.registerBeforeRender(function() {
+    earth.position.x += 0.01
+    earth.position.y += 0.01
+    earth.position.z += 0.01
+  })
   engine.runRenderLoop(function () {
     scene.render()
   })
