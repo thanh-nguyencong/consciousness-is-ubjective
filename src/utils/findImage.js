@@ -5,7 +5,7 @@ export const findImage = async (imagePath) => {
     return null;
   }
 
-  if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
+  if (imagePath.startsWith("https://") || imagePath.startsWith("https://")) {
     return imagePath;
   }
 
