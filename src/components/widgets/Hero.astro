@@ -1,5 +1,6 @@
 ---
 import Picture from "~/components/core/Picture.astro";
+import Badge from "../core/Badge.astro";
 const { } = Astro.props;
 ---
 
@@ -14,7 +15,7 @@ const { } = Astro.props;
         </h1>
         <div class="max-w-3xl mx-auto">
           <p class="text-xl text-gray-600 mb-8 dark:text-slate-400">
-            He is doing this giant dumbshit. It consumes so much of his energy he do not have time to laugh at yo mama's fatness.
+            He is doing this giant dumbshit. It consumes so much of his energy he does not have time to laugh at yo mama's fatness.
             Go see his posts to learn no good.
           </p>
           <div class="max-w-none flex justify-center">
@@ -34,9 +35,9 @@ const { } = Astro.props;
       <div>
         <div class="relative flex justify-center mb-8">
           <div class="flex flex-col justify-center">
-            <Picture src={import("~/assets/images/hero.jpg")}
-              class="mx-auto rounded-md shadow-lg bg-gray-400 dark:bg-slate-700" widths={[400, 768]}
-              sizes=" (max-width: 767px) 400px, 768px" alt="Hero Image" aspectRatio="16:9" />
+            <ul>
+              <li><Badge/></li>
+            </ul>
           </div>
         </div>
       </div>
